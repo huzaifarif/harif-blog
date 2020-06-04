@@ -2,7 +2,7 @@
 template: page
 title: About me
 socialImage: /media/image-2.jpg
-slug: about
+slug: /pages/about
 draft: true
 ---
 I recognize myself as a Full Stack Developer, Freelancer, DevOps Engineer, a Tech Enthusiast and a novice blogger trying to develop and maintain hobbies that complement my skills 🎉
