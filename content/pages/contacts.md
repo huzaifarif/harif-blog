@@ -2,8 +2,8 @@
 template: page
 title: Contact me
 socialImage: /media/image-4.jpg
-slug: /pages/contact
-draft: true
+slug: contacts
+draft: false
 ---
 ![Photo by Antoine Barrès on Unsplash](/media/antoine-barres-jay5bqvyf5a-unsplash.jpg "Keep in touch! 😊")
 
