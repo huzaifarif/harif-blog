@@ -1,8 +1,8 @@
 ---
 template: page
 title: Contact me
-socialImage: /media/image-4.jpg
-slug: contacts
+socialImage: /media/antoine-barres-jay5bqvyf5a-unsplash.jpg
+slug: contact
 draft: false
 ---
 ![Photo by Antoine Barrès on Unsplash](/media/antoine-barres-jay5bqvyf5a-unsplash.jpg "Keep in touch! 😊")
@@ -21,6 +21,5 @@ I work with the following technologies:
 
 
 
-For any of the above or just to have a chat, you can always reach out to me at:[](mailto:contact@huzaifarif.dev)
-
+For any of the above or just to have a chat, you can always reach out to me at:
 [contact@huzaifarif.dev](mailto:contact@huzaifarif.dev)
