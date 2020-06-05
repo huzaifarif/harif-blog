@@ -42,10 +42,19 @@ Well WSL is available on all editions of Windows since the Fall Creators Update.
 
 1. PowerShell:
 
-   * Press `Win + X` and choose **Windows PowerShell (Admin)** to open a PowerShell window with elevated rights.
+   * Press `⊞ Win` + `X` and choose **Windows PowerShell (Admin)** to open a PowerShell window with elevated rights.
    * Type/Paste the following command:
 
      ```
      Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
      ```
-2. Settings app:
+
+
+2. Control Panel:
+
+   * Press `⊞ Win` to open start menu.
+   * Type **Turn Windows features on or off**
+
+
+   *
+   *
