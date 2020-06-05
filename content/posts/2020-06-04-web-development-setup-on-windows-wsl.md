@@ -34,4 +34,18 @@ You can read more about it [here](https://docs.microsoft.com/en-us/windows/wsl/a
 
 ## How can I get it?
 
+#### Prerequisites:
+
 Well WSL is available on all editions of Windows since the Fall Creators Update. WSL2 is available on all editions starting the May 2020 update (if you haven't received it yet head to [Update Center](https://www.microsoft.com/en-us/software-download/windows10) to grab it).
+
+#### How to enable it:
+
+1. PowerShell:
+
+   * Press `Win + X` and choose **Windows PowerShell (Admin)** to open a PowerShell window with elevated rights.
+   * Type/Paste the following command:
+
+     ```
+     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+     ```
+2. Settings app:
