@@ -1,6 +1,6 @@
 ---
 template: post
-title: Web Development Setup on Windows + WSL
+title: Web Development Setup on Windows + WSL [Part 1]
 slug: windows-wsl-setup
 draft: true
 date: 2020-06-04T09:19:14.385Z
@@ -29,3 +29,9 @@ Well, WSL aims at solving both the above problems and a bit more
 > The Windows Subsystem for Linux lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a virtual machine
 >
 > \- Microsoft
+
+You can read more about it [here](https://docs.microsoft.com/en-us/windows/wsl/about).
+
+## How can I get it?
+
+Well WSL is available on all editions of Windows since the Fall Creators Update. WSL2 is available on all editions starting the May 2020 update (if you haven't received it yet head to [Update Center](https://www.microsoft.com/en-us/software-download/windows10) to grab it).
