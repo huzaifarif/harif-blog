@@ -62,4 +62,67 @@ Well WSL is available on all editions of Windows since the Fall Creators Update.
 
 #### Linux means Distros right?
 
+> UPDATE: If you want to try WSL 2 please head on to [Upgrade to WSL 2](#upgrade-to-wsl-2) section below than come back here and follow the next steps.
+>
+> Alternatively in the Windows PowerShell run `wsl --set-default-version 2` before proceeding.
+
 Well, yeah! Now that we have enabled WSL lets head on to the Microsoft Store to grab one of the available distributions. Yes you heard that right. We'll be downloading Linux distribution just like any other app from the Microsoft Store!
+
+* Open the Microsoft Store and search for **WSL**
+
+  ![WSL Distros available on Microsoft Store](/media/ms-store-wsl.png)
+* Select one of your liking. For this tutorial we'll be using the **[Ubuntu](https://www.microsoft.com/store/productId/9NBLGGH4MSV6)** distribution from Canonical.
+
+  ![Selecting and installing Ubuntu distribution from the Microsoft Store](/media/ubuntu-ms-store.png)
+* Once installed, we'll have an **Ubuntu** app installed and accessible just like any other app from the Start Menu or a desktop icon or pinned to Task Bar.
+
+  ![Ubuntu app visible in Start Menu](/media/ubuntu-app-start.png)
+* On launching it the first time it will install all dependencies and other stuff required for the distribution to work. Once done we'll have a fully functional Linux terminal at our disposal inside of Windows. Bye bye Cygwin and Git Bash.
+
+  You'll have to setup admin user and password for Linux.
+
+  ![Ubuntu bash on Windows](/media/ubuntu-bash-setup.webp)
+
+## WSL 1 vs. WSL 2
+
+Now that we have WSL enabled and our distribution setup we can either choose to stay with WSL 1 or upgrade it to use the newly released WSL 2.
+
+#### WSL 2 Improvements
+
+WSL 1 was powered by Linux binary translation layer whereas WSL 2 is powered by a full fledged Linux kernel running on the Hyper-V technology. Hence Hyper-V support is a prerequisite to move to WSL 2.
+
+WSL 2 also brings significant increase in file system performance, as well as adds full system call compatibility.
+
+You can read more about WSL 2 [here](https://docs.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2) and comparison with WSL 1 and other caveats [here](https://docs.microsoft.com/en-us/windows/wsl/compare-versions).
+
+#### Upgrade to WSL 2
+
+* Enable the **Virtual Machine Platform** feature:
+
+  ```
+  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+  ```
+* List currently installed Linux distributions:
+
+  ```
+  wsl -l -v
+  ```
+* Choose the Linux distribution (Ubuntu in our case) and set the new version number to be used (2 in our case):
+
+  ```
+  wsl --set-version Ubuntu 2
+  ```
+
+  PS: This may take quite a bit of time depending on how big the Linux distribution is as it converts the entire file system to EXT4 and copies everything over there.
+* If we want to make all future Linux distributions to default to WSL 2 we can set it like:
+
+  ```
+  wsl --set-default-version 2
+  ```
+
+Well this is all for Part 1 of this series. In the next part we'll make Ubuntu much more functional by:
+
+* OMZsh + Windows Terminal 💻
+* Fix pathetic directory colors 🎨
+* Install and setup VSCode to work with WSL ⚔
+* Work with Linux GUI apps 👓
