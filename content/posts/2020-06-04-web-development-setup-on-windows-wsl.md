@@ -48,13 +48,18 @@ Well WSL is available on all editions of Windows since the Fall Creators Update.
      ```
      Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
      ```
-
-
 2. Control Panel:
 
    * Press `⊞ Win` to open start menu.
    * Type **Turn Windows features on or off**
 
+     ![Search and choose "Turn Windows features on or off"](/media/wsl-start-menu.png)
+   * In the window that opens scroll down and select the item **Windows Subsystem for Linux**
 
-   *
-   *
+     ![Select check box next to Windows Subsystem for Linux](/media/wsl-turn-on-feature.png)
+
+   And that's it, you have enabled WSL 🎉
+
+#### Linux means Distros right?
+
+Well, yeah! Now that we have enabled WSL lets head on to the Microsoft Store to grab one of the available distributions. Yes you heard that right. We'll be downloading Linux distribution just like any other app from the Microsoft Store!
