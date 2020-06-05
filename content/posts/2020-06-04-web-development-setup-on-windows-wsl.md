@@ -113,7 +113,9 @@ You can read more about WSL 2 [here](https://docs.microsoft.com/en-us/windows/ws
   wsl --set-version Ubuntu 2
   ```
 
-  PS: This may take quite a bit of time depending on how big the Linux distribution is as it converts the entire file system to EXT4 and copies everything over there.
+  PS: If the above command says you need to update your Linux Kernel [click here](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) to download and install the Kernel update (for 64-bit) and re-run the above command or head on to [this page](https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel) for more information.
+
+  PPS: This may take quite a bit of time depending on how big the Linux distribution is as it converts the entire file system to EXT4 and copies everything over there.
 * If we want to make all future Linux distributions to default to WSL 2 we can set it like:
 
   ```
