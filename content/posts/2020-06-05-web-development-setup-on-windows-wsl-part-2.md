@@ -1,6 +1,6 @@
 ---
 template: post
-title: Web Development Setup on Windows + WSL [Part 2]
+title: Setup WSL on Windows [Part 2]
 slug: spice-up-wsl
 draft: true
 date: 2020-06-05T10:20:07.462Z
