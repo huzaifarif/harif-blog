@@ -2,7 +2,7 @@
 template: post
 title: Web Development Setup on Windows + WSL [Part 1]
 slug: windows-wsl-setup
-draft: false
+draft: true
 date: 2020-06-04T09:19:14.385Z
 description: This guide will help you setup WSL (Windows Subsystem for Linux)
   and a web development environment where you feel at home!
