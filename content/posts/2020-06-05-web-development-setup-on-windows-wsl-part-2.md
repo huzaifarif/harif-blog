@@ -1,7 +1,7 @@
 ---
 template: post
 title: Web Development Setup on Windows + WSL [Part 2]
-slug: spice-wsl-up
+slug: spice-up-wsl
 draft: true
 date: 2020-06-05T10:20:07.462Z
 description: Once we've setup WSL let's get started to tweak it to serve us best
