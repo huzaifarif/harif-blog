@@ -128,3 +128,39 @@ Microsoft has provided a pretty cool integration for VS Code to access files on 
    # File-based tab completion for the start function above
    compdef _files start
    ```
+
+## Useful Oh My Zsh Plugins
+
+There is a huge and ever growing list of Oh My Zsh plugins. Here I'll list a few of the very useful ones which I've been using everyday to increase my productivity.
+
+1. [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
+
+   Provides a handful of aliases and functions for normal git commands we use everyday.
+2. [z](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z)
+
+   Easily jump around in the file system using indexed history without having to type in full directory paths.
+3. [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+   Enable syntax highlighting in Ubuntu shell.
+
+   ```
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
+4. [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+   This plugin adds suggestions to your commands as you type them based on history and completions.
+
+   ```
+   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   ```
+5. Finally add all the above to `~/.zshrc` plugins list:
+
+   ```
+   plugins=(
+       ...
+       git
+       z
+       zsh-syntax-highlighting
+       zsh-autosuggestions
+   )
+   ```
