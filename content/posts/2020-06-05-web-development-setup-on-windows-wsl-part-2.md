@@ -329,3 +329,31 @@ Well docker has become an integral part of development workflows lately. Getting
 ### Desktop shortcut to launch Terminator
 
 Now since we've setup a X server to run GUI apps with WSL it would be great to create a desktop shortcut to one of our favorite terminal emulators Terminator.
+
+1. Create a `.vbs` file and paste the following in it:
+
+   ```
+   ' terminator.vbs
+   myCd = "/mnt/c/Users/huzai"
+   If WScript.Arguments.Length > 0 Then
+       myCd = "'$(wslpath -u '" & WScript.Arguments(0) & "')'"
+   End If
+   args = "bash" & " -c ""cd " & myCd & "; DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0 terminator"""
+   WScript.CreateObject("Shell.Application").ShellExecute "C:\Windows\System32\wsl.exe", args, "", "open", 0
+   ```
+
+   If using WSL 1 replace Line 6 with:
+
+   ```
+   args = "bash" & " -c ""cd " & myCd & "; DISPLAY=:0 terminator"""
+   ```
+2. Create a shortcut on Desktop to `wscript.exe` and execute it with the following:
+
+   ```
+   C:\Windows\System32\wscript.exe C:\Users\huzai\startTerminator.vbs
+   ```
+
+   ![Terminator shortcut for quick launching](/media/terminator-shortcut.png)
+3. The last step is to find a pretty Terminator [Icon file](https://goo.gl/images/kvLttb) for the shortcut and pin it to the taskbar for quick launching. 😁
+
+   PS: VB Script [original source](https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl/).
