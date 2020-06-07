@@ -173,6 +173,60 @@ So we've setup WSL and Oh My Zsh and have been using the Ubuntu app until now. B
 
 It is awesome for quite a couple of reasons:
 
-1. Can be used as a replacement for Command Prompt and PowerShell both. o
-2. Has tab support for multiple different session(s). Supports simultaneous Command Prompt, PowerShell, WSL.
+1. Can be used as a replacement for Command Prompt and PowerShell both. ⚒
+2. Has tab support for multiple different session(s). Supports simultaneous Command Prompt, PowerShell, WSL. 🥊
 3. Theme support 🎨
+
+Windows terminal can be installed from the [Microsoft Store](https://aka.ms/terminal).
+
+Here's a snippet of my WSL configuration for Ubuntu in Windows Terminal:
+
+```
+"profiles": [
+  {
+    "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "hidden": false,
+    "name": "Ubuntu",
+    "source": "Windows.Terminal.Wsl",
+    "fontFace": "MesloLGS NF", // If you don't have this use any other Powerline fonts we installed.
+    "fontSize": 12,
+    "padding" : "0, 0, 0, 0",
+    "snapOnInput" : true,
+    "startingDirectory" : "//wsl$/Ubuntu/home/${USER}/workspace",
+    "closeOnExit" : true,
+    "colorScheme" : "VS Code",
+    "historySize" : 9001,
+    "cursorColor" : "#FFFFFF",
+    "cursorShape" : "bar"
+   }
+ ],
+ "schemes": [
+   {
+      "name": "VS Code",
+      "background" : "#232323",
+      "black" : "#000000",
+      "blue" : "#579BD5",
+      "brightBlack" : "#797979",
+      "brightBlue" : "#9BDBFE",
+      "brightCyan" : "#2BC4E2",
+      "brightGreen" : "#1AD69C",
+      "brightPurple" : "#DF89DD",
+      "brightRed" : "#F6645D",
+      "brightWhite" : "#EAEAEA",
+      "brightYellow" : "#F6F353",
+      "cyan" : "#00B6D6",
+      "foreground" : "#D3D3D3",
+      "green" : "#3FC48A",
+      "purple" : "#CA5BC8",
+      "red" : "#D8473F",
+      "white" : "#EAEAEA",
+      "yellow" : "#D7BA7D"
+   },
+ ]
+```
+
+You can find more color schemes from [Microsoft](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes) and the [community](https://atomcorp.github.io/themes/).
+
+## Linux GUI apps on WSL
+
+TODO
