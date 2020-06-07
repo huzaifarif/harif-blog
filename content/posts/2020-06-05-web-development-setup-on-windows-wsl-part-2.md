@@ -229,4 +229,26 @@ You can find more color schemes from [Microsoft](https://docs.microsoft.com/en-u
 
 ## Linux GUI apps on WSL
 
-TODO
+Until now we have worked with the Linux terminal in WSL and tweaked and customized it to our liking. But there are times when we would like to work with GUI apps like **Gitk** or **Terminator** (if you didn't really like any terminal offerings for Windows). Well WSL doesn't natively support GUI apps out of the box. But no worries we can still run them 🎉
+
+To achieve this we'll use an X server like **VcXsrv** (or any other that you prefer) and direct WSL's display to the X server running on Windows.
+
+1. Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/).
+2. Launch VcXsrv once installed.
+
+   ![VcXsrv Setup](/media/launch-vcxsrv-1.png)
+
+   *NOTE: If using WSL 2 make sure to check the box to "Disable Access Control".*
+
+   ![VcXsrv Disable access control for WSL 2](/media/launch-vcxsrv-2.png)
+3. Launch Ubuntu Terminal and add the following lines to `~/.zshrc`
+
+   ```
+   # For WSL 1
+   export DISPLAY=:0
+
+   # For WSL 2
+   # Export display to support XServer (rquired for GUI apps with WSL)
+   export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+   export LIBGL_ALWAYS_INDIRECT=1
+   ```
