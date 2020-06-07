@@ -56,8 +56,6 @@ You can change the theme to your liking by editing the `~/.zshrc` file:
    ZSH_THEME="agnoster"
    ```
 
-    
-
 You'll notice one thing, that for some of the fonts are all messed up now. Don't worry we'll fix those in the next step.
 
 ## Installing Powerline Fonts
@@ -89,4 +87,44 @@ You must have notices by now if you started using the Ubuntu bash that the direc
    ```
    ## set colors for LS_COLORS
    eval `dircolors ~/.dircolors`
+   ```
+
+## Configure VS Code to work with WSL
+
+Microsoft has provided a pretty cool integration for VS Code to access files on WSL.
+
+1. Install VS Code on Windows. Make sure to **Select Additional Tasks** during installation, and be sure to check the **Add to PATH** option so you can easily open a folder in WSL using the `code` command.
+2. Install the [Remote Development extension pack](https://aka.ms/vscode-remote/download/extension) or just the [Remote WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
+
+   ![Install Remote WSL Extension](/media/remote-wsl-extension.png)
+3. Now we'll edit the `~/.zshrc` file to allow us open WSL files in explorer and also to redirect output of the `code` command to not block the terminal instance while its running.
+
+   ```
+   nano ~/.zshrc
+   ```
+
+   Add the following lines
+
+   ```
+   # User configuration
+
+   # Hide the user and computer name in our prompt
+   DEFAULT_USER=$USER
+
+   # Alias to open explorer in the current directory, returning true to override explorer's failure
+   alias e.="explorer.exe . || true"
+   https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+   # Alias to open visual studio code and blackhole its output
+   alias c.="code . > /dev/null"
+
+   # Function to delegate to Windows to open each of its arguments
+   start() {
+       for file in "$@"
+       do
+           cmd.exe /C "$file"
+       done
+   }
+
+   # File-based tab completion for the start function above
+   compdef _files start
    ```
