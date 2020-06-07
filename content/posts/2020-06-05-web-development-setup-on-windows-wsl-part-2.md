@@ -72,3 +72,21 @@ You'll notice one thing, that for some of the fonts are all messed up now. Don't
    ```
    .\install.ps1
    ```
+
+## Fix directory colors
+
+You must have notices by now if you started using the Ubuntu bash that the directory colors are just awful. We'll be using the Solarized color palette from [here](https://github.com/seebi/dircolors-solarized).
+
+1. Choose the one that suits you.
+2. Fetch the chosen directory colors to directory on the Ubuntu file system.
+
+   ```
+   # using dircolors.ansi-dark
+   curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
+   ```
+3. Update `~/.zshrc` by adding the following lines to use the directory colors
+
+   ```
+   ## set colors for LS_COLORS
+   eval `dircolors ~/.dircolors`
+   ```
