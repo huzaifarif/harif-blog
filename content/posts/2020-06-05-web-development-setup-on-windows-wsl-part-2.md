@@ -60,4 +60,15 @@ You can change the theme to your liking by editing the `~/.zshrc` file:
 
 You'll notice one thing, that for some of the fonts are all messed up now. Don't worry we'll fix those in the next step.
 
-## Installing PowerLine Fonts
+## Installing Powerline Fonts
+
+1. ```
+   git clone https://github.com/powerline/fonts.git
+   ```
+
+   Make sure to clone this to a Windows directory under `/mnt/` as we need to execute the PowerShell script on Windows.
+2. Start a PowerShell instance as Administrator and execute the following script to install all the Powerline fonts:
+
+   ```
+   .\install.ps1
+   ```
