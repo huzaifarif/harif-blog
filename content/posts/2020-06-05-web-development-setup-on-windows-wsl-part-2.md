@@ -263,4 +263,69 @@ Here are a few bonus items for you to consider ❤
 
 ### Docker
 
+Well docker has become an integral part of development workflows lately. Getting docker to work with WSL involves a few extra steps which I'll detail below:
+
+1. Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/#install-docker-desktop-on-windows).
+2. Launch Docker for Windows and go to the *Settings* tab.
+
+   ![Docker settings enable for WSL](/media/docker-wsl2-enable.png)
+
+   NOTE: Choose *Expose daemon on TCP without TLS* for WSL 1.
+
+   **If you're on WSL 2 that's it. Read on if you're on WSL 1 or [upgrade your distribution to WSL 2](https://huzaifarif.dev/posts/windows-wsl-setup#upgrade-to-wsl-2).**
+3. Install Docker. The following is taken form Ubuntu 18.04 installation notes taken from Docker’s documentation:
+
+   ```
+   # Update the apt package list.
+   sudo apt-get update -y
+
+   # Install Docker's package dependencies.
+   sudo apt-get install -y \
+       apt-transport-https \
+       ca-certificates \
+       curl \
+       software-properties-common
+
+   # Download and add Docker's official public PGP key.
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+   # Verify the fingerprint.
+   sudo apt-key fingerprint 0EBFCD88
+
+   # Add the `stable` channel's Docker upstream repository.
+   #
+   # If you want to live on the edge, you can change "stable" below to "test" or
+   # "nightly". I highly recommend sticking with stable!
+   sudo add-apt-repository \
+      "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) \
+      stable"
+
+   # Update the apt package list (for the new apt repo).
+   sudo apt-get update -y
+
+   # Install the latest version of Docker CE.
+   sudo apt-get install -y docker-ce
+
+   # Allow your user to access the Docker CLI without needing root access.
+   sudo usermod -aG docker $USER
+   ```
+
+   You might want to restart the terminal to be able to run Docker with `sudo` at this point.
+4. Install Docker Compose. The following is taken form Ubuntu 18.04 installation notes taken from Docker’s documentation:
+
+   ```
+   sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+   sudo chmod +x /usr/local/bin/docker-compose
+   ```
+5. Add the following to `~/.zshrc` to allow the Docker service to communicate with the daemon running on Windows.
+
+   ```
+   # Connect to remote (windows) Docker Daemon
+   export DOCKER_HOST=tcp://localhost:2375
+   ```
+
 ### Desktop shortcut to launch Terminator
+
+Now since we've setup a X server to run GUI apps with WSL it would be great to create a desktop shortcut to one of our favorite terminal emulators Terminator.
