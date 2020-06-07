@@ -252,3 +252,15 @@ To achieve this we'll use an X server like **VcXsrv** (or any other that you pre
    export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
    export LIBGL_ALWAYS_INDIRECT=1
    ```
+
+Now we can use Linux GUI apps on Windows 😎
+
+![Terminator on WSL](/media/terminator-gui-wsl.png)
+
+## Bonus
+
+Here are a few bonus items for you to consider ❤
+
+### Docker
+
+### Desktop shortcut to launch Terminator
