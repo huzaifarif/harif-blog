@@ -129,3 +129,5 @@ Well this is all for Part 1 of this series. In the next part we'll make Ubuntu m
 * Fix pathetic directory colors 🎨
 * Install and setup VSCode to work with WSL ⚔
 * Work with Linux GUI apps 👓
+
+[Part 2 is live!](https://huzaifarif.dev/posts/spice-up-wsl)
