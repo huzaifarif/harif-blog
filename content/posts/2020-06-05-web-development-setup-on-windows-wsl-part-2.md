@@ -164,3 +164,15 @@ There is a huge and ever growing list of Oh My Zsh plugins. Here I'll list a few
        zsh-autosuggestions
    )
    ```
+
+PS: You can find a full list of official plugins [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
+
+## Windows terminal
+
+So we've setup WSL and Oh My Zsh and have been using the Ubuntu app until now. But Microsoft has a great new [open source](https://github.com/microsoft/terminal) offering: **Windows Terminal**.
+
+It is awesome for quite a couple of reasons:
+
+1. Can be used as a replacement for Command Prompt and PowerShell both. o
+2. Has tab support for multiple different session(s). Supports simultaneous Command Prompt, PowerShell, WSL.
+3. Theme support 🎨
