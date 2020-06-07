@@ -2,7 +2,7 @@
 template: post
 title: Setup WSL on Windows [Part 2]
 slug: spice-up-wsl
-draft: true
+draft: false
 date: 2020-06-05T10:20:07.462Z
 description: Once we've setup WSL let's get started to tweak it to serve us best
   and some productivity hacks to the bare bones Linux terminal.
