@@ -27,17 +27,17 @@ Well most of you must be familiar with the Z shell already. If you haven't heard
 
 1. Install Z shell:
 
-   ```shell
+   ```bash
    sudo apt install zsh
    ```
 2. Make it your default shell:
 
-   ```shell
+   ```bash
    chsh -s $(which zsh)
    ```
 3. Install Oh My Zsh:
 
-   ```shell
+   ```bash
    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
@@ -45,10 +45,10 @@ Now restart your Ubuntu shell to be greeted with the Oh My Zsh terminal.
 
 You can change the theme to your liking by editing the `~/.zshrc` file:
 
-1. ```shell
+1. ```bash
    nano ~/.zshrc
    ```
-2. ```shell
+2. ```bash{numberLines: true}
    # Find and change this
    ZSH_THEME="robbyrussell"
 
@@ -60,7 +60,7 @@ You'll notice one thing, that for some of the fonts are all messed up now. Don't
 
 ## Installing Powerline Fonts
 
-1. ```shell
+1. ```bash
    git clone https://github.com/powerline/fonts.git
    ```
 
@@ -78,13 +78,13 @@ You must have notices by now if you started using the Ubuntu bash that the direc
 1. Choose the one that suits you.
 2. Fetch the chosen directory colors to directory on the Ubuntu file system.
 
-   ```shell
+   ```bash
    # using dircolors.ansi-dark
    curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
    ```
 3. Update `~/.zshrc` by adding the following lines to use the directory colors
 
-   ```shell
+   ```bash{numberLines: true}
    ## set colors for LS_COLORS
    eval `dircolors ~/.dircolors`
    ```
@@ -99,13 +99,13 @@ Microsoft has provided a pretty cool integration for VS Code to access files on 
    ![Install Remote WSL Extension](/media/remote-wsl-extension.png)
 3. Now we'll edit the `~/.zshrc` file to allow us open WSL files in explorer and also to redirect output of the `code` command to not block the terminal instance while its running.
 
-   ```shell
+   ```bash
    nano ~/.zshrc
    ```
 
    Add the following lines:
 
-   ```shell
+   ```bash{numberLines: true}
    # User configuration
 
    # Hide the user and computer name in our prompt
@@ -113,7 +113,7 @@ Microsoft has provided a pretty cool integration for VS Code to access files on 
 
    # Alias to open explorer in the current directory, returning true to override explorer's failure
    alias e.="explorer.exe . || true"
-   https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+
    # Alias to open visual studio code and blackhole its output
    alias c.="code . > /dev/null"
 
@@ -143,19 +143,19 @@ There is a huge and ever growing list of Oh My Zsh plugins. Here I'll list a few
 
    Enable syntax highlighting in Ubuntu shell.
 
-   ```shell
+   ```bash
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
    ```
 4. [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
    This plugin adds suggestions to your commands as you type them based on history and completions.
 
-   ```shell
+   ```bash
    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    ```
 5. Finally add all the above to `~/.zshrc` plugins list:
 
-   ```shell
+   ```bash{numberLines: true}
    plugins=(
        ...
        git
@@ -181,7 +181,7 @@ Windows terminal can be installed from the [Microsoft Store](https://aka.ms/term
 
 Here's a snippet of my WSL configuration for Ubuntu in Windows Terminal:
 
-```json
+```json{numberLines: true}
 "profiles": [
   {
     "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -243,7 +243,7 @@ To achieve this we'll use an X server like **VcXsrv** (or any other that you pre
    ![VcXsrv Disable access control for WSL 2](/media/launch-vcxsrv-2.png)
 3. Launch Ubuntu Terminal and add the following lines to `~/.zshrc`
 
-   ```shell
+   ```bash{numberLines: true}
    # For WSL 1
    export DISPLAY=:0
 
@@ -275,7 +275,7 @@ Well docker has become an integral part of development workflows lately. Getting
    **If you're on WSL 2 that's it. Read on if you're on WSL 1 or [upgrade your distribution to WSL 2](https://huzaifarif.dev/posts/windows-wsl-setup#upgrade-to-wsl-2).**
 3. Install Docker. The following is taken form Ubuntu 18.04 installation notes taken from Docker’s documentation:
 
-   ```shell
+   ```bash
    # Update the apt package list.
    sudo apt-get update -y
 
@@ -314,14 +314,14 @@ Well docker has become an integral part of development workflows lately. Getting
    You might want to restart the terminal to be able to run Docker with `sudo` at this point.
 4. Install Docker Compose. The following is taken form Ubuntu 18.04 installation notes taken from Docker’s documentation:
 
-   ```shell
+   ```bash
    sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
    sudo chmod +x /usr/local/bin/docker-compose
    ```
 5. Add the following to `~/.zshrc` to allow the Docker service to communicate with the daemon running on Windows.
 
-   ```shell
+   ```bash{numberLines: true}
    # Connect to remote (windows) Docker Daemon
    export DOCKER_HOST=tcp://localhost:2375
    ```
@@ -332,7 +332,7 @@ Now since we've setup a X server to run GUI apps with WSL it would be great to c
 
 1. Create a `.vbs` file and paste the following in it:
 
-   ```vb
+   ```vb{numberLines: true}
    ' terminator.vbs
    myCd = "/mnt/c/Users/huzai"
    If WScript.Arguments.Length > 0 Then
@@ -344,7 +344,7 @@ Now since we've setup a X server to run GUI apps with WSL it would be great to c
 
    If using WSL 1 replace Line 6 with:
 
-   ```vb
+   ```vb{numberLines: true}
    args = "bash" & " -c ""cd " & myCd & "; DISPLAY=:0 terminator"""
    ```
 2. Create a shortcut on Desktop to `wscript.exe` and execute it with the following:
