@@ -46,7 +46,7 @@ Well WSL is available on all editions of Windows since the Fall Creators Update.
    * Press `⊞ Win` + `X` and choose **Windows PowerShell (Admin)** to open a PowerShell window with elevated rights.
    * Type/Paste the following command:
 
-     ```
+     ```powershell
      Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
      ```
 2. Control Panel:
@@ -100,17 +100,17 @@ You can read more about WSL 2 [here](https://docs.microsoft.com/en-us/windows/ws
 
 * Enable the **Virtual Machine Platform** feature:
 
-  ```
+  ```powershell
   dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
   ```
 * List currently installed Linux distributions:
 
-  ```
+  ```powershell
   wsl -l -v
   ```
 * Choose the Linux distribution (Ubuntu in our case) and set the new version number to be used (2 in our case):
 
-  ```
+  ```powershell
   wsl --set-version Ubuntu 2
   ```
 
@@ -119,7 +119,7 @@ You can read more about WSL 2 [here](https://docs.microsoft.com/en-us/windows/ws
   PPS: This may take quite a bit of time depending on how big the Linux distribution is as it converts the entire file system to EXT4 and copies everything over there.
 * If we want to make all future Linux distributions to default to WSL 2 we can set it like:
 
-  ```
+  ```powershell
   wsl --set-default-version 2
   ```
 
